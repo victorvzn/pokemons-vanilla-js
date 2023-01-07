@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POKEMON JS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+    <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-minimal@4/minimal.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="pokemons-app">
+    <div class="pokemons-wrapper">
+      <h1>Pokemon Favorites</h1>
+
+      <div id="pokemonsList" class="pokemons-list"></div>
+
+      <div>
+        <button id="firstPage" class="btn">First</button>
+        <button id="prevPage" class="btn">Prev</button>
+        <span id="currentPage">1</span>
+        <button id="nextPage" class="btn">Next</button>
+        <button id="lastPage" class="btn">Last</button>
+      </div>
+    </div>
+    <div class="pokemons-wrapper">
+        <form id="pokemonForm" class="pokemon-form">
+          <h3>Pokemon <small>#</small></h3>
+          <input id="id" type="hidden" >
+          <input id="name" type="text" placeholder="Pokemon name" required>
+          <input id="image" type="text" placeholder="Pokemon image">
+          <button>Guardar</button>
+          <button type="reset">Limpiar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>

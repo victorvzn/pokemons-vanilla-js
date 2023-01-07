@@ -1,0 +1,91 @@
+body {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  font-family: 'Press Start 2P', cursive;
+}
+
+h6 {
+  margin: 0
+}
+
+.btn {
+  border: none;
+  background-color: coral;
+  border: 2px solid rgb(193, 88, 50);
+  border-radius: 6px;
+  padding: .2rem .4rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.pokemons-app {
+  display: flex;
+  gap: 1rem;
+}
+
+.pokemons-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.pokemons-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.pokemons-item {
+  background-color: #dea;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: .5rem;
+  border-radius: 6px;
+  border: 3px solid rgb(143, 168, 68);
+  min-width: 12rem;
+  text-transform: capitalize;
+}
+
+.pokemon__buttons {
+  display: flex;
+  gap: .2rem;
+}
+
+.pokemon-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: #dea;
+  padding: 1rem;
+  text-align: center;
+  border: 3px solid rgb(143, 168, 68);
+  border-radius: 6px;
+  margin-top: 43px;
+}
+
+.pokemons-pagination {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.pokemons-pagination span {
+  background: #fff;
+  vertical-align: middle;
+  line-height: 2rem;
+  padding: 0 .5rem;
+}
+
+.is-favorite {
+  color: #FFDE00;
+  fill: #FFDE00;
+}
+
+.is-hidden {
+  display: none;
+}
