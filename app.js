@@ -27,6 +27,10 @@ const fetchPokemons = async (page = 1) => {
 	})
   // console.log(dataResults)
   pages = Math.ceil(data.count / limit)
+
+  const $favoritePokemons = document.getElementById('favoritePokemons')
+  $favoritePokemons.innerHTML = `Favorites: ${pokemonFavorites.length}`;
+  
   return dataResults
 }
 
@@ -44,10 +48,10 @@ const renderPokemons = async (pokemons) => {
   pokemons.forEach(({ id, name, image, isFavorite }) => {
     elements += `
       <article class="pokemons-item">
-        <img src="${image}" width="80" height="80" loading="lazy" alt="${name}" />
+        <img onclick="viewPokemon(${id})" class="pokemons-item__image" src="${image}" width="80" height="80" loading="lazy" alt="${name}" />
         <h6>#${id}</h6>
         <h4>${name}</h4>
-        <div class="pokemon__buttons">
+        <div class="pokemons-item__buttons">
           <button onclick="viewPokemon(${id})" class="btn">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-eye" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
           </button>
@@ -80,13 +84,14 @@ const toggleFavorite = async (id, name) => {
 
   const pokemons = await fetchPokemons(page);
   renderPokemons(pokemons);
-  currentPage.innerHTML = page;
 }
 
 const readPokemon = async (pokemonId) => {
   const pokemonForm = document.forms['pokemonForm'];
 
-  const foundPokemon = pokemonFavorites.find(favorite => Number(favorite.id) === pokemonId)
+  const currentFavorites = JSON.parse(localStorage.getItem(POKEMONS_STORAGE_KEY)) ?? []
+
+  const foundPokemon = currentFavorites.find(favorite => Number(favorite.id) === pokemonId)
 
   const { id, name, image } = foundPokemon;
 
