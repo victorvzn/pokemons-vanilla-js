@@ -5,6 +5,15 @@ body {
   font-family: 'Press Start 2P', cursive;
 }
 
+h1 {
+  margin-bottom: 0;
+}
+
+h4 {
+  margin-top: 0;
+}
+
+
 h6 {
   margin: 0
 }
