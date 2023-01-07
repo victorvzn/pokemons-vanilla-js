@@ -48,6 +48,9 @@ h6 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
+  min-height: 549px;
+  max-width: 674px;
+  place-content: flex-start;
 }
 
 .pokemon-pagination {
